@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    command: redis-server --requirepass ${REQUIRE_PASS}
+    volumes:
+      - ./db:/data
+    ports:
+      - 6379:6379
